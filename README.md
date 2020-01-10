@@ -1,4 +1,4 @@
-# README
+# Project: [Building Facebook](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
