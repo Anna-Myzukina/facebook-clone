@@ -1,0 +1,35 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+  background-color: #e9ebee !important;
+}
+
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 2.7em;
+    color: #fff;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+  }
+  
+  #logo:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+.navbar-inverse{
+    background-color: #385898 !important;
+}
+
+label{
+  color: white;
+}
+.login{
+  margin-top: 22px;
+}
+footer{
+  background-color: white !important;
+}
