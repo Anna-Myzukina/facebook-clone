@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20200114154554) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     
     t.string "name"
@@ -48,6 +47,4 @@ ActiveRecord::Schema.define(version: 20200114154554) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-=======
->>>>>>> 18437e320a18bbfd57e688263be784bd44297e50
 end
