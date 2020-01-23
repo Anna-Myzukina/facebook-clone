@@ -8,7 +8,6 @@ end
 gem 'rails', '~> 5.1.7'
 gem 'bootstrap-sass', '3.3.7'
 gem 'bcrypt',         '3.1.12'
-gem 'faker',          '1.7.3'
 gem 'will_paginate', '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0' 
 gem 'pg', '0.18.4' 
@@ -29,6 +28,7 @@ gem 'bootstrap_form'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails"
+  gem 'faker',          '1.7.3'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'sqlite3', '1.3.13'
