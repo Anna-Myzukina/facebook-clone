@@ -13,19 +13,23 @@
   <h2 class="pl">Create a New Account</h2>
   <h4 class="pl">It`s quick and easy</h4>
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="field">
+    <%= f.label :username%><br/>
     <%= f.text_field :username, autofocus: true, autocomplete: "name", placeholder: "First name" %>
     </div>
 
-    <div class="form-group col-md-6">
+      <div class="field">
+      <%= f.label :sirname%><br/>
     <%= f.text_field :sirname, autofocus: true, autocomplete: "name", placeholder: "Last name" %>
     </div>
 
-    <div class="form-group col-md-12">
+      <div class="field">
+      <%= f.label :email%><br/>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"  %>
     </div>
 
-    <div class="form-group col-md-12">
+      <div class="field">
+      <%= f.label :password%><br/>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
