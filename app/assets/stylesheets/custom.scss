@@ -5,13 +5,24 @@ body{
   background-color: #e9ebee !important;
 }
 
+.img{
+  padding: 70px;
+}
+
+.pl{
+  padding-left: 15px;
+}
+
+label,
+hr{
+  color: grey !important;
+}
 #logo {
     float: left;
-    margin-right: 10px;
     font-size: 2.7em;
     color: #fff;
     letter-spacing: -1px;
-    padding-top: 9px;
+    padding: 25px;
     font-weight: bold;
   }
   
@@ -24,11 +35,53 @@ body{
     background-color: #385898 !important;
 }
 
+.btn-log a{
+
+  color: whitesmoke;
+  margin-bottom: 10px;
+  padding: 10px;
+}
 label{
   color: white;
 }
 .login{
   margin-top: 22px;
+}
+
+input,
+select{
+  width: 100%;
+}
+
+input{
+  margin-bottom: 15px;
+}
+
+.birthday-gender{
+  font-size: 25px;
+  padding-top: 10px;
+}
+.custom-checkbox{
+  padding-left: 0;
+  font-size: 16px;
+  display: flex;
+}
+
+.btn{
+  padding: 5px 60px;
+  color: white;
+  font-size: 25px;
+  background: linear-gradient(#67ae55, #578843);
+  background-color: #69a74e;
+  border-color: #3b6e22 #3b6e22 #2c5115;
+  box-shadow: inset 0 1px 1px #a4e388;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hr{
+  color: grey;
+  
 }
 footer{
   background-color: white !important;

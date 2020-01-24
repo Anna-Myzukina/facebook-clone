@@ -1,40 +1,154 @@
-<h2>Sign up</h2>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   
+<div class="row">
+<div class="col-md-4 img">
+  <%= image_tag 'facebook1.png' %>
+</div>
+<div class="col-md-2">
+</div>
+  <div class="col-md-5">
+  <h2 class="pl">Create a New Account</h2>
+  <h4 class="pl">It`s quick and easy</h4>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <%= f.text_field :username, autofocus: true, autocomplete: "name", placeholder: "First name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :username%><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "name" %>
-  </div>
+    <div class="form-group col-md-6">
+    <%= f.text_field :sirname, autofocus: true, autocomplete: "name", placeholder: "Last name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :sirname%><br />
-    <%= f.text_field :sirname, autofocus: true, autocomplete: "name" %>
-  </div>
+    <div class="form-group col-md-12">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"  %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
+    <div class="form-group col-md-12">
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "New password" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+ 
+    <label class="form-group col-md-12 text-muted birthday-gender" for="inlineFormCustomSelect">Birthday</label>
+    <div class="form-group col-md-4">
+        <select class="custom-select" id="inlineFormCustomSelect">
+        <option selected>Month...</option>
+        <option value="1">Jan</option>
+        <option value="2">Feb</option>
+        <option value="3">Mar</option>
+        <option value="3">Apr</option>
+        <option value="3">May</option>
+        <option value="3">Jun</option>
+        <option value="3">Jul</option>
+        <option value="3">Aug</option>
+        <option value="3">Sep</option>
+        <option value="3">Oct</option>
+        <option value="3">Nov</option>
+        <option value="3">Dec</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+        <select class="custom-select" id="inlineFormCustomSelect">
+        <option selected>Day...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+        <select class="custom-select" id="inlineFormCustomSelect">
+        <option selected>Year...</option>
+        <option value="2000">2000</option>
+        <option value="1999">1999</option>
+        <option value="1998">1998</option>
+        <option value="1998">1997</option>
+        <option value="1998">1996</option>
+        <option value="1998">1995</option>
+        <option value="1998">1994</option>
+        <option value="1998">1993</option>
+        <option value="1998">1992</option>
+        <option value="1998">1991</option>
+        <option value="1998">1990</option>
+        <option value="1998">1989</option>
+        <option value="1998">1988</option>
+        <option value="1998">1987</option>
+        <option value="1998">1986</option>
+        <option value="1998">1985</option>
+        <option value="1998">1984</option>
+        <option value="1998">1983</option>
+        <option value="1998">1982</option>
+        <option value="1998">1981</option>
+        <option value="1998">1980</option>
+      </select>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+    <label class="form-group col-md-12 text-muted birthday-gender" for="">Gender</label>
+    <div class="form-group col-md-4 custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+    <label class="custom-control-label text-dark" for="customControlAutosizing">Female</label>
+    </div>
+
+    <div class="form-group col-md-4 custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+    <label class="custom-control-label text-dark" for="customControlAutosizing">Male</label>
+    </div>
+
+    <div class="form-group col-md-4 custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+    <label class="custom-control-label text-dark" for="customControlAutosizing">Custom</label>
+    </div>
+
+    <p class="pl">
+    By clicking SignUp, you agree to our <a href="#">Terms</a>,
+    <a href="#">Data Policy</a> and <br> <a href="Cookies Policy.">
+    You may recieve SMS Notifications from us and can opt any time.
+    </p>
+
+
+
+</div>
+
+  <div class="actions pl">
+    <button class="btn">Sign up</button>
   </div>
+  <hr>
+  <h4 class="pl"><a href="#">Create a Page</a> for a celebrity, band or busyness.</h3>
+    </div>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
