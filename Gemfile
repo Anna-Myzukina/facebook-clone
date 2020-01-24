@@ -29,6 +29,7 @@ gem 'bootstrap_form'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails"
+  gem 'factory_bot'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'sqlite3', '1.3.13'
