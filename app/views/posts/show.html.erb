@@ -1,9 +1,22 @@
+<%=render "layouts/header" %>
+
 <p id="notice"><%= notice %></p>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.username %>
+      </h1>
+    </section>
+  </aside>
+</div>
 
 <p>
   <strong>Body:</strong>
   <%= @post.body %>
 </p>
-
+<%= image_tag gravatar_for(current_user), :class => 'gravatar' %> 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
