@@ -29,5 +29,5 @@ Style/ClassAndModuleChildren:
 Layout/ExtraSpacing:
   AllowForAlignment: false
 Layout/MultilineMethodCallIndentation:
-  Enabled: true
+  Enabled: false
   EnforcedStyle: indented
