@@ -1,36 +1,16 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
    <div class="container">
-     <%if !user_signed_in?%>
-    <%= link_to "facebook", root_path,  id: "logo" %>
-        <ul class="nav navbar-nav navbar-right d-flex">
-        <form>
-          <div class="form-row">
-            <div class="form-group col-md-5">
-              <label for="inputEmail">Email or Phone</label>
-              <input type="email" class="form-control" id="inputEmail">
-            </div>
-          <div class="form-group col-md-5">
-              <label for="inputPassword">Password</label>
-              <input type="password" class="form-control" id="inputPassword">
-          </div>
-          <%# <div class="form-group col-md-2">
-            <button class="btn login btn-outline-success my-2 my-sm-0" type="submit">Log in</button>
-          </div> %>
-          <div class="btn-log col-md-2">
-          <%= render "devise/shared/links" %>
-          </div>
-        </div>
-      </form>
-      <%else%>
-       <%= link_to "facebook", root_path,  id: "logo" %>
-      <ul class="nav navbar-nav navbar-right d-flex">
-        <li><%= link_to "Profile", '#',class: "nav-link" %></li>
-        <li><%= link_to "News Feed", posts_path, class: "nav-link" %></li>
-        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
-      </ul>
-       
-      <%end%>
-  </div>
+    <p class="navbar-text float-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
+</p>
 
   
 </header>

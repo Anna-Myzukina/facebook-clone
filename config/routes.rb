@@ -1,20 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations" }
 
-  devise_scope :user do
-    get 'login', to: 'devise/sessions#new'
-  end
+# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+root to: "posts#index"
+devise_for :users,
+path: '',
+path_names: {sign_in: 'login', sign_out: 'logout', edit:'profile',sign_up: 'registration'}
+# controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+resource :users, only: [:show]
+resources :posts
 
-  devise_scope :user do
-    get 'signup', to: 'devise/registrations#new'
-  end
   
-  devise_scope :user do
-    root to: 'registrations#new'
-  end
-
-
-  resources :posts
-  resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

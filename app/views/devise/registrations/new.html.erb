@@ -1,6 +1,6 @@
 
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url:   registration_path(resource) ) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   
 <div class="row">
@@ -144,8 +144,9 @@
 
 </div>
 
-  <div class="actions pl">
-    <button class="btn">Sign up</button>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
   </div>
   <hr>
   <h4 class="pl"><a href="#">Create a Page</a> for a celebrity, band or busyness.</h3>
