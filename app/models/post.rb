@@ -1,4 +1,4 @@
 class Post < ApplicationRecord
     belongs_to :user
-    has_many :coment
+    has_many :comments, dependent: :destroy
 end
