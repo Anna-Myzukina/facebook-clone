@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :user_signed_in?, only: %i[create destroy] 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
