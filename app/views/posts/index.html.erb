@@ -17,7 +17,7 @@
         <td><%= post.body %></td>
         <td><%= post.user.email %></td>
          <div class="comment-count">
-                <span class="tag is-rounded"><%= post.comments.count if current_user.comment %> comments</span>
+            <p>
           </div>
         <td><%= link_to 'Show', post %></td>
         <%if post.user == current_user%>
