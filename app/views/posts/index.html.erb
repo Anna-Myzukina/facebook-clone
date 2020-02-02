@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Body</th>
+      <th>Post</th>
        <th>User</th>
       <th colspan="3"></th>
     </tr>
@@ -19,16 +19,13 @@
             <div class="content">
                  <%= post.body %>
             </div>
-
-  <%= form_with(model: post, local: true) do |form| %>
-              <div class="field">
-                <%= form.label :comments %>
-                <%= form.text_area :comments, id: :comments_body %>
-               </div>
-   <%end%>   
-       
-            <div class="comment-count">
+            <%= render 'comment/comment'%>
+             <%= render 'likes/likes'%>
+           <div class="comment-count">
                 <span class="tag is-rounded"><%= post.comments.count %> comments</span>
+            </div>
+             <div class="likes-count">
+                <span class="tag is-rounded"><%= post.likes.count%> likes</span>
             </div>
 
         <td><%= link_to 'Show', post %></td>
