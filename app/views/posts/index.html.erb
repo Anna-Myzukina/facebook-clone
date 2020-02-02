@@ -16,9 +16,21 @@
       <tr>
         <td><%= post.body %></td>
         <td><%= post.user.email %></td>
-         <div class="comment-count">
-            <p>Comments</p>
-          </div>
+            <div class="content">
+                 <%= post.body %>
+            </div>
+
+  <%= form_with(model: post, local: true) do |form| %>
+              <div class="field">
+                <%= form.label :comments %>
+                <%= form.text_area :comments, id: :comments_body %>
+               </div>
+   <%end%>   
+       
+            <div class="comment-count">
+                <span class="tag is-rounded"><%= post.comments.count %> comments</span>
+            </div>
+
         <td><%= link_to 'Show', post %></td>
         <%if post.user == current_user%>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
