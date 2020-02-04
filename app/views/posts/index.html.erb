@@ -1,7 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+  <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
-
+  <div class="col-4">
+    <%= render "feed/users_feed"%>
+ 
+  </div>
+  <div class="col-8">
+    <h1>Posts</h1>
 <table>
   <thead>
     <tr>
@@ -20,10 +26,7 @@
                  <%= post.body %>
             </div>
 
-          <%= render 'comment/comment'%>
-           <div class="comment-count">
-                <span class="tag is-rounded"><%= post.comments.count %> comments</span>
-            </div>
+
 
           <p><%= render partial: "likes", locals: {post: post}%></p>   
           <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
@@ -41,3 +44,10 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+  </div>
+
+
+
+
+  </div>
+</div>
