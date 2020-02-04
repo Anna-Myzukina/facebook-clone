@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Post</th>
-       <th>User</th>
+       <th>username</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,19 +19,19 @@
             <div class="content">
                  <%= post.body %>
             </div>
-            <%= render 'comment/comment'%>
-             <%= render 'likes/likes'%>
+
+          <%= render 'comment/comment'%>
            <div class="comment-count">
                 <span class="tag is-rounded"><%= post.comments.count %> comments</span>
             </div>
-             <div class="likes-count">
-                <span class="tag is-rounded"><%= post.likes.count%> likes</span>
-            </div>
 
-        <td><%= link_to 'Show', post %></td>
+          <p><%= render partial: "likes", locals: {post: post}%></p>   
+          <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+         <td><%= link_to 'view this post', post %></td>
         <%if post.user == current_user%>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to ' edit this post', edit_post_path(post) %></td>
+        <td><%= link_to 'delete this post', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
       </tr>
     <% end %>

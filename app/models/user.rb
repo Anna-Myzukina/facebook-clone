@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :likes, dependent: :destroy
+  
+  def likes?(post)
+    post.likes.where(user_id: id).any?
+  end
 end
