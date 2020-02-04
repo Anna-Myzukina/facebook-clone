@@ -37,6 +37,11 @@ If the test suite passes, you'll be ready to run the app in a local server:
 $ rails server
 ```
 
+```
+$ rspec
+```
+# rails generate rspec:install
+
 ## License:
 * See LICENSE.md for details.
 
