@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 body{
   background-color: #e9ebee !important;
@@ -33,6 +34,23 @@ hr{
 
 .navbar-inverse{
     background-color: #385898 !important;
+}
+
+.header-styles{
+    color: #fff;
+    padding: 30px;
+    font-size: 16px;
+    line-height: 20px;
+    height: 50px;
+}
+
+a.header-styles-a{
+  color: white !important;
+  padding: 0 !important;
+}
+
+li>a.header-styles:hover{
+  color: gray;
 }
 
 .btn-log a{

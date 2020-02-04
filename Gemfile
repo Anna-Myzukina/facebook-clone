@@ -22,6 +22,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'jquery-rails'
 gem 'bootstrap_form'
+gem "font-awesome-rails"
 
 
 

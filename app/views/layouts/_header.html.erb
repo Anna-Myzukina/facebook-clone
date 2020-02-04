@@ -1,16 +1,29 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
    <div class="container">
-    <p class="navbar-text float-right">
+   <%= link_to "facebook-clone", '/', id: "logo"%>
+   <nav>
+    <ul class="nav navbar-nav navbar-right">
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<li class="header-styles">
+<i class="fa fa-user"></i>
+  Logged in as: <strong><%= current_user.email %></strong>
+</li>
+<li class="header-styles">
+  <%= link_to 'Edit profile |', edit_user_registration_path, :class => 'header-styles-a' %> 
+  </li>
+<li class="header-styles">
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'header-styles-a'  %>
+</li>
 <% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<li class="header-styles">
+  <%= link_to "Sign up |", new_user_registration_path, :class => 'header-styles-a'  %>
+  </li>
+  <li class="header-styles">
+  <%= link_to "Login", new_user_session_path, :class => 'header-styles-a'  %>
+  </li>
 <% end %>
-</p>
-</p>
 
-  
+    </ul>
+    </nav>
+  </div>
 </header>
