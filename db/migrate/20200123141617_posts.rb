@@ -4,5 +4,7 @@ class Posts < ActiveRecord::Migration[5.1]
       t.string :body
       t.timestamps
     end
+    
+    add_index :posts, %i[user_id created_at]
   end
 end

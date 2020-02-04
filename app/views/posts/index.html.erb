@@ -3,11 +3,17 @@
   <p id="notice"><%= notice %></p>
 
   <div class="col-4">
-    <%= render "feed/users_feed"%>
- 
+    <% @posts.each do |post| %>
+  <p>Author:<%= post.user.email %></p> 
+  <% end %>
   </div>
   <div class="col-8">
     <h1>Posts</h1>
+       <% @posts.each do |post| %>
+  <div class="content">
+                 <%= post.body %>
+            </div>
+<%end %>
 <table>
   <thead>
     <tr>
@@ -22,10 +28,7 @@
       <tr>
         <td><%= post.body %></td>
         <td><%= post.user.email %></td>
-            <div class="content">
-                 <%= post.body %>
-            </div>
-
+          
 
 
           <p><%= render partial: "likes", locals: {post: post}%></p>   
