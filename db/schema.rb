@@ -38,8 +38,6 @@ ActiveRecord::Schema.define(version: 20200203163209) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "post_id"
-    t.integer "coment_id"
   end
 
   create_table "users", force: :cascade do |t|
