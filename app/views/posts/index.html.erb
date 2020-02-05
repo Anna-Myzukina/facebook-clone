@@ -2,18 +2,57 @@
   <div class="row">
   <p id="notice"><%= notice %></p>
 
-  <div class="col-4">
-    <% @posts.each do |post| %>
-  <p>Author:<%= post.user.email %></p> 
-  <% end %>
+  <div class="col-md-4">
+      <% @posts.each do |post| %>
+        <p>Posts created by:<%= post.user.email %></p> 
+      <% end %>
+  <button class='btn btn-primary'><%= link_to 'New Post', new_post_path %></button>
   </div>
-  <div class="col-8">
-    <h1>Posts</h1>
+  <div class="col-md-8">
+      <h1>Posts</h1>
+      <hr>
        <% @posts.each do |post| %>
-  <div class="content">
-                 <%= post.body %>
-            </div>
+          <div class="card ">
+              <div class="card-header">
+                 <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <i class="fa fa-user"></i>
+                            <p>Author:<%= post.user.email %></p> 
+                       </div>
+                      <div class="col-md-8">
+                         <ul class="nav nav-tabs card-header-tabs">
+                            <%= link_to 'view', post %>
+                            <%if post.user == current_user%>
+                            <%= link_to ' edit', edit_post_path(post) %>
+                            <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                             <%end%>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                      <div class="card-body">
+                           <h3 class="card-text"> <%= post.body %></h3>
+                       </div>
+                      <hr>
+                      <%= render partial: "likes", locals: {post: post}%>
+                      <p>Here should be Like + user`s comment</p>
+                      <hr>
+                      <td><%= render partial: "likes", locals: {post: post}%></td>   
+                      <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td>
+  
+<hr>
+<p>Here should be form for comments</p>
+<hr>
+<div>
+<p>Should be fontawesom buttons</p>
+<i class="fa fa-thumbs-up"></i>
+</div>
+<hr>
+</div>
 <%end %>
+</div>
 <table>
   <thead>
     <tr>
@@ -28,24 +67,19 @@
       <tr>
         <td><%= post.body %></td>
         <td><%= post.user.email %></td>
-          
-
-
-          <p><%= render partial: "likes", locals: {post: post}%></p>   
-          <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-
          <td><%= link_to 'view this post', post %></td>
         <%if post.user == current_user%>
         <td><%= link_to ' edit this post', edit_post_path(post) %></td>
         <td><%= link_to 'delete this post', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
+          <td><%= render partial: "likes", locals: {post: post}%></td>   
+          <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
 <%= link_to 'New Post', new_post_path %>
   </div>
 
