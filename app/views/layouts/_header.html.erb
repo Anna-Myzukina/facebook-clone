@@ -6,7 +6,7 @@
 <% if user_signed_in? %>
 <li class="header-styles">
 <i class="fa fa-user"></i>
-  Logged in as: <strong><%= current_user.email %></strong>
+  Logged in as: <strong><%= current_user.username %></strong>
 </li>
 <li class="header-styles">
   <%= link_to 'Edit profile |', edit_user_registration_path, :class => 'header-styles-a' %> 

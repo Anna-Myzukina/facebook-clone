@@ -7,8 +7,10 @@
   <strong>Body:</strong>
   <%= @post.body %>
 </p>
-<div id= 'like'>
-  <%= render partial: "likes", locals: {post: @post}%>
-</div> 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<strong>Comments</strong>
+<hr>
+ <%= render 'comment/comment', collection: @post.comments.reverse%>
+
+
+<%= render  'comment/form' %>
 <%= link_to 'Back', posts_path %>

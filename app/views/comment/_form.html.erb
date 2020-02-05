@@ -1,0 +1,14 @@
+<h4>Leave a comment</h4>
+<%= form_for [ @article, @comment ] do |f| %>
+  <p>
+    <%= f.label :username %><br/>
+    <%= f.text_field :user %>
+  </p>
+  <p>
+    <%= f.label :body %><br/>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

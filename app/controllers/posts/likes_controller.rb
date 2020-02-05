@@ -7,7 +7,7 @@ class Posts::LikesController < ApplicationController
       respond_to do |format|
         format.html { redirect_to @post }
         format.js
-    end
+      end
     end
     
     

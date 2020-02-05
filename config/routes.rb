@@ -9,8 +9,9 @@ path_names: {sign_in: 'login', sign_out: 'logout', edit:'profile',sign_up: 'regi
 resources :users, only: [:show, :index]
 resources :posts  do
     resource :like, module: :posts
+   
 end
-resources :comments
 
+resources :comments
   
 end
