@@ -1,6 +1,10 @@
-<div>
-  <% @post.comments.each do |comment|%>
-    <strong> <%= comment.username %></strong>
-  <p class="comment"><%= comment.body %></p>
+  <div class="col-lg-12">
+ 
+   <h4>Comments:<%= @post.comments.count%></h4>
+   <% @post.comments.each do |comment| %>
+      <h4><%= comment.username %></h4>
+       <p class="comment"><%= comment.body %></p>
   <%end%>
+  
 </div>
+ 

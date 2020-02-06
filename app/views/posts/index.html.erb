@@ -38,16 +38,17 @@
                            <h3 class="card-text"> <%= post.body %></h3>  
                        </div>
                       <hr>
-                      <div>
-                       <td><%= render partial: "likes", locals: {post: post}%></td>   
-                       <td><i class="fa fa-thumbs-up"></i><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td><hr>
-                      </div>
-                      <div class="input-group mb-3">
+                    
+                     <div class="input-group mb-3">
                          <input type="text" class="form-control" placeholder="Write a comment..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                          <div class="input-group-append">
                       </div>
+                        <div>
+                       <td><%= render partial: "likes", locals: {post: post}%></td>   
+                       <td><i class="fa fa-thumbs-up"></i><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td><hr>
+                      </div>
                   </div>
-                      <p>Here should be Like + user`s comment</p>
+                      
                       <hr>
                   </div>
            <%end %>

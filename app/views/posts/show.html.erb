@@ -4,13 +4,15 @@
 
 
 <p>
-  <strong>Body:</strong>
+  <strong>Post:</strong>
   <%= @post.body %>
+   
 </p>
-<strong>Comments</strong>
-<hr>
- <%= render 'comment/comment', collection: @post.comments.reverse%>
-
-
 <%= render  'comment/form' %>
+
+<%= render 'comment/comment'%>
+
+
+<div class= "col-lg-12">
 <%= link_to 'Back', posts_path %>
+</div>

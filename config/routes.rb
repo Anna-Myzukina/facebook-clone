@@ -12,6 +12,8 @@ resources :posts  do
    
 end
 
-resources :comments
+resources :posts do
+    resource :comments
+end
   
 end
