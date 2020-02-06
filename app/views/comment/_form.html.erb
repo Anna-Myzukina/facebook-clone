@@ -1,7 +1,7 @@
    <%= form_for [ @post, @comment ] do |f| %>
   <div class = " col-md-5">
     <%= f.label :username %><br/>
-    <%= f.text_field :user , :class => "form-control", placeholder:"name"%>
+    <%= f.text_field :username , :class => "form-control", placeholder:"name"%>
   
     <%= f.label :body %><br/>
     <%= f.text_area :body, :class => "form-control", placeholder:"leave a comment" %>
