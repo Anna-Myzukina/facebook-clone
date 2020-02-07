@@ -1,6 +1,22 @@
 <div class="container">
   <div class="row">
   <p id="notice"><%= notice %></p>
+<div class="center jumbotron main-banner">
+  <div class="user-photo">
+    <img class="user-gravatar" alt="User photo" src="/assets/underwater" />
+      <h2><%= current_user.username %></h2>  
+  </div>
+  <div class="under-buner-menu">
+    <a href="#">Lorem</a>
+    <a href="#">Ipsum</a>
+    <a href="#">Set</a>
+    <a href="#">Loram</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+  <p id="notice"><%= notice %></p>
 
   <div class="col-md-4">
       <% @posts.each do |post| %>
@@ -53,35 +69,7 @@
                   </div>
            <%end %>
         </div>
-<table>
-  <thead>
-    <tr>
-      <th>Post</th>
-       <th>username</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.body %></td>
-        <td><%= post.user.email %></td>
-         <td><%= link_to 'view this post', post %></td>
-        <%if post.user == current_user%>
-        <td><%= link_to ' edit this post', edit_post_path(post) %></td>
-        <td><%= link_to 'delete this post', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <%end%>
-          <td><%= render partial: "likes", locals: {post: post}%></td>   
-          <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= link_to 'New Post', new_post_path %>
-  </div>
 
 
 
