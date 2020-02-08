@@ -20,7 +20,7 @@ class Posts::LikesController < ApplicationController
 
   private
 
-  def get_post
+  def take_post
     @post = Post.find(params[:post_id])
   end
 end
