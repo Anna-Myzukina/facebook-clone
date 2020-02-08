@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_post, only: %i[show edit update destroy]
 
   # GET /posts
   # GET /posts.json
@@ -13,7 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comment = Comment.new( :post => @post )
+    @comment = Comment.new(post: @post)
   end
 
   # GET /posts/new
@@ -22,16 +21,15 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-     flash[:notice] = 'Post was successfully created'
-     redirect_to posts_path
+      flash[:notice] = 'Post was successfully created'
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -62,14 +60,14 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-      
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:body)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:body)
+  end
 end

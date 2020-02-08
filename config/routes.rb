@@ -7,6 +7,9 @@ path: '',
 path_names: {sign_in: 'login', sign_out: 'logout', edit:'profile',sign_up: 'registration'}
 # controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 resources :users, only: [:show, :index]
+authenticated :user do
+    root 'posts#index', as: :authenticated_root
+    end 
 resources :posts  do
     resource :like, module: :posts
    
