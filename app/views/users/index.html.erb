@@ -17,9 +17,14 @@
       <tr>
         <td><%= user.username %></td>
         <td><%= user.email %></td>
+        <% if  current_user %>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_registration_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%else%> 
+        
+      
+        <td><%= link_to 'Show', user %></td>
+         <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New User', new_post_path %>
+<%= link_to "Back to Posts" , posts_path%>

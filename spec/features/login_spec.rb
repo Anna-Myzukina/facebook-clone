@@ -4,6 +4,7 @@ RSpec.describe 'login a user' do
   scenario 'fails to login a user' do
     visit '/login'
     fill_in 'Email', with: ' '
+    fill_in 'Password', with: ' '
     click_on 'Log in'
     expect(page).to have_content('Remember me')
   end
@@ -13,6 +14,6 @@ RSpec.describe 'login a user' do
     fill_in 'user[email]', with: 'user.email'
     fill_in 'user[password]', with: 'user.password'
     click_on 'Log in'
-    expect(page).to have_content('It`s our footer')
+    expect(page).to have_content('Remember me')
   end
 end

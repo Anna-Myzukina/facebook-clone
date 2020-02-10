@@ -1,75 +1,82 @@
 <div class="container">
-<div class="row">
-<p id="notice"><%= notice %></p>
-<div class="center jumbotron main-banner">
-<div class="user-photo">
-<img class="user-gravatar" alt="User photo" src="/assets/underwater" />
-<h2><%= current_user.username %></h2> 
-</div>
-<div class="under-buner-menu">
-<a href="#">Lorem</a>
-<a href="#">Ipsum</a>
-<a href="#">Set</a>
-<a href="#">Loram</a>
-</div>
-</div>
+    <div class="row">
+        <p id="notice"><%= notice %></p>
+        <div class="center jumbotron main-banner">
+            <div class="user-photo">
+                <img class="user-gravatar" alt="User photo" src="/assets/underwater" />
+                <h2><%= current_user.username %></h2> 
+                </div>
+                    <div class="under-buner-menu">
+                    <a href="#">Lorem</a>
+                    <a href="#">Ipsum</a>
+                    <a href="#">Set</a>
+                    <a href="#">Loram</a>
+                </div>
+           </div>
+        </div>
 
-<div class="container">
-<div class="row">
-<p id="notice"><%= notice %></p>
-
-<div class="col-md-4">
-<% @posts.each do |post| %>
-<p>Username:<%= post.user.username %></p> 
-<p>Email:<%= post.user.email %></p> 
-<% end %>
-<button class='btn btn-primary'><%= link_to 'New Post', new_post_path %></button>
-</div>
-<div class="col-md-8">
-<h1>Posts</h1>
+        <div>
+        <ol>
+        <li class="mini-menu">
+          <%= link_to 'See All Users ', users_path %> 
+        </li>
+        <li class="mini-menu">
+          <%= link_to 'View All Posts ', posts_path%> 
+        </li>
+        </ol>
+        </div>
 <hr>
-<% @posts.each do |post| %>
-<div class="card ">
-<div class="card-header">
-<div class="container">
-<div class="row">
-<div class="col-md-4">
+ <div> 
+   <p>Create a new post here...</p> 
+  <button class='btn btn-primary'>
+    <%= link_to 'New Post', new_post_path %>
+  </button>
+</div>  
+<h1 class='posts-header'> All Posts</h1>
+    <% @posts.each do |post| %>
+      <div class="card ">
 
-<p><i class="fa fa-user"></i>Author:<%= post.user.username %></p> 
-<strong> <p>Created on:<%= post.created_at %></p> </strong>
-</div>
-<div class="col-md-8">
-<ul class="nav nav-tabs card-header-tabs">
-<%= link_to 'view', post %>
-<%if post.user == current_user%>
-<%= link_to ' edit', edit_post_path(post) %>
-<%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%end%>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="card-body">
-<h3 class="card-text"> <%= post.body %></h3> 
-</div>
-<hr>
+      <div class="card-body info">
+        <p>Author: <%= post.user.username %> </p> 
+        <p>Date: <%= post.created_at.to_formatted_s(:short) %> UTC </p> 
+      </div>
 
-<div class="input-group mb-3">
-<%= render "comment/form" ,post: post=%> 
-<% post.comments.each do |comment| %>
-<%= render 'comment/comment', comment: comment,post: post =%>
-<% end %>
+        <div class="card-body">
+          <p class="card-text"><%= post.body %></p> 
+        </div>  
+         
+       
+            <div>
+            <% if current_user == post.user %>
+            <button class='btn btn-primary'><%= link_to 'Show', post %></button>
+            <button class='btn btn-primary'><%= link_to 'Edit', edit_post_path(post) %></button>
+            <button class='btn btn-primary'><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+            <% end %>
+            </div>
+            <hr>
+            <div>
+            <%= link_to raw('<i class="fa fa-heart"></i>'), post_like_path(post), method: :post, class: "btn btn-info" %>
+            <%=  post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+            <span class='comment-count'>Comments: <%= post.comments.count =%> </span>
+            </div>  
+
+       
+          <div class='card-body'> <br>
+            <%= render "comment/form" ,post: post=%>  
+          </div>
+          
+          <% post.comments.each do |comment| %>
+          <div class='comments'>   
+          <div class='card-body left'>  
+          <ol class='posts'>
+          <%= render 'comment/comment', comment: comment,post: post %>
+          </ol>
+          </div>
+          
+          </div>
+      <% end %>
+      </div>
+    <% end %>
+    </div>
 </div>
-<div>
-<td><%= render partial: "likes", locals: {post: post}%></td> 
-<td><i class="fa fa-thumbs-up"></i><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td><hr>
-<span class='comment-count'>Comments: <%= post.comments.count =%> </span>
-</div>
-</div>
-<hr>
-</div>
-<%end %>
-</div>
-</div>
-</div>
+

@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200208205321) do
+ActiveRecord::Schema.define(version: 20200205175826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.text "content"
-    t.bigint "post_id"
+    t.text "body"
     t.bigint "user_id"
+    t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id", "user_id"], name: "index_comments_on_post_id_and_user_id"
+    t.string "username"
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -35,13 +35,11 @@ ActiveRecord::Schema.define(version: 20200208205321) do
 
   create_table "posts", force: :cascade do |t|
     t.string "body"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.integer "post_id"
-    t.integer "comment_id"
-    t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.integer "coment_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,5 +69,4 @@ ActiveRecord::Schema.define(version: 20200208205321) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "posts", "users"
 end

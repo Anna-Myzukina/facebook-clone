@@ -12,7 +12,8 @@ class CommentsController < ApplicationController
   def index
     @comments = Comment.all
   end
-
+   
+ 
   def create
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
@@ -37,7 +38,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :post_id)
+    params.require(:comment).permit(:body, :username)
   end
 
   def set_post

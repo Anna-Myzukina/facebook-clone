@@ -1,7 +1,11 @@
    <%= form_for [ post, @comment ] do |f| %>
-  <div class = " col">
-    <%= f.text_area :content, :class => "form-control", placeholder:"leave a comment" %>
+  <div class = " col-md-4">
+       <%= f.label :username%><br/>
+       <%= f.text_field :username, autofocus: true, autocomplete: " your name", placeholder: "commenter's name" %> 
+  </div> 
+  <div >
+    <%= f.text_area :body, :class => "form-control", placeholder:"leave a comment" %>
      <br>
     <%= f.submit 'Create comment' , :class=>"post btn btn-success"%>
-  </div>
+   </div>
 <% end %>
