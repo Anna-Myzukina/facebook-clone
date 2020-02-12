@@ -1,6 +1,6 @@
 class Posts::LikesController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_post
+  before_action :find_post
   def create
     @post.likes.where(user_id: current_user.id).first_or_create
 
@@ -20,7 +20,7 @@ class Posts::LikesController < ApplicationController
 
   private
 
-  def get_post
+  def find_post
     @post = Post.find(params[:post_id])
   end
 end
