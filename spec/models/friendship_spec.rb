@@ -10,4 +10,4 @@ RSpec.describe Friendship, type: :model do
     @friendship = Friendship.new(user_id: 1)
     expect(@friendship.save).to eq(false)
   end
-end 
+end
