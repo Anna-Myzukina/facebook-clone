@@ -16,6 +16,4 @@ class User < ApplicationRecord
   def likes?(post)
     post.likes.where(user_id: id).any?
   end
-
- 
 end
