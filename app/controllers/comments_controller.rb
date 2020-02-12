@@ -12,8 +12,7 @@ class CommentsController < ApplicationController
   def index
     @comments = Comment.all
   end
-   
- 
+
   def create
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user

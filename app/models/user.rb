@@ -3,10 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable
-  validates  :username, presence: true
-  validates  :sirname, presence: true
-  validates  :email, presence: true
-  validates  :password, presence: true
+  validates :username, presence: true
+  validates :sirname, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
   has_many :posts
   has_many :comments
   has_many :likes, dependent: :destroy
@@ -14,5 +14,4 @@ class User < ApplicationRecord
   def likes?(post)
     post.likes.where(user_id: id).any?
   end
-
 end
