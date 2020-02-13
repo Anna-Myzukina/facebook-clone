@@ -1,0 +1,31 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+   <div class="container">
+   <%= link_to "facebook-clone", '/', id: "logo"%>
+   <nav>
+    <ul class="nav navbar-nav navbar-right">
+<% if user_signed_in? %>
+<li class="header-styles">
+<i class="fa fa-user"></i>
+  Logged in as: <strong><%= current_user.username %></strong>
+</li>
+
+
+<li class="header-styles">
+  <%= link_to 'Edit profile |', edit_user_registration_path, :class => 'header-styles-a' %> 
+  </li>
+<li class="header-styles">
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'header-styles-a'  %>
+</li>
+<% else %>
+<li class="header-styles">
+  <%= link_to "Sign up |", new_user_registration_path, :class => 'header-styles-a'  %>
+  </li>
+  <li class="header-styles">
+  <%= link_to "Login", new_user_session_path, :class => 'header-styles-a'  %>
+  </li>
+<% end %>
+
+    </ul>
+    </nav>
+  </div>
+</header>

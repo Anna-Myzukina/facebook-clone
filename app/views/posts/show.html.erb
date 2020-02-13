@@ -1,0 +1,13 @@
+<%=render "layouts/header" %>
+
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Post:</strong>
+  <%= @post.body %>
+   
+</p>
+<div class= "col-lg-12">
+<%= link_to 'Back to Main', posts_path %>
+</div>

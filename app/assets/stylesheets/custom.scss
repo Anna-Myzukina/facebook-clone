@@ -1,0 +1,137 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+body{
+  background-color: #e9ebee !important;
+}
+
+.img{
+  padding: 70px;
+}
+
+.pl{
+  padding-left: 15px;
+}
+
+label,
+hr{
+  color: grey !important;
+}
+#logo {
+    float: left;
+    font-size: 2.7em;
+    color: #fff;
+    letter-spacing: -1px;
+    padding: 25px;
+    font-weight: bold;
+  }
+  
+  #logo:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+.navbar-inverse{
+    background-color: #385898 !important;
+}
+
+.header-styles{
+    color: #fff;
+    padding: 30px;
+    font-size: 16px;
+    line-height: 20px;
+    height: 50px;
+}
+
+a.header-styles-a{
+  color: white !important;
+  padding: 0 !important;
+}
+
+li>a.header-styles:hover{
+  color: gray;
+}
+
+.btn-log a{
+
+  color: whitesmoke;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.main-banner{
+  background-image: url("water.jpg");
+  background-size: cover;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.user-gravatar{
+  width: 150px;
+  height: 150px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+
+.user-photo{
+  display: flex;
+  color: white;
+}
+
+.user-photo>h2{
+  padding: 72px 0 0 30px;
+}
+
+.under-buner-menu{
+  background-color: #fff;
+  height: 100px;
+  width: 100%;
+}
+
+label{
+  color: white;
+}
+.login{
+  margin-top: 22px;
+}
+
+input,
+select{
+  width: 100%;
+}
+
+input{
+  margin-bottom: 15px;
+}
+
+.birthday-gender{
+  font-size: 25px;
+  padding-top: 10px;
+}
+.custom-checkbox{
+  padding-left: 0;
+  font-size: 16px;
+  display: flex;
+}
+
+.buttons{
+  padding: 5px 30px;
+  color: white;
+  font-size: 25px;
+  width: 180px;
+  margin: 30px 0 0 140px;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hr{
+  color: grey;
+  
+}
+footer{
+  background-color: white !important;
+}
