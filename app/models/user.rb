@@ -10,10 +10,16 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :likes, dependent: :destroy
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
   def likes?(post)
     post.likes.where(user_id: id).any?
   end
+  
+  def friend_name
+    friends.map{|f| f.username}
+  end
+
 end

@@ -17,14 +17,11 @@
       <tr>
         <td><%= user.username %></td>
         <td><%= user.email %></td>
-        <% if  current_user %>
         <td><%= link_to 'Show', user %></td>
-          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <%else%> 
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Add friend', "" ,class: "btn btn-success"%></td>
+        <td><%= link_to 'Remove friend', "", class: "btn btn-danger"%></td>
         
-      
-        <td><%= link_to 'Show', user %></td>
-         <% end %>
       </tr>
     <% end %>
   </tbody>
