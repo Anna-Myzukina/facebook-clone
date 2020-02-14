@@ -19,10 +19,19 @@
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Add friend', "" ,class: "btn btn-success"%></td>
+        
+        <td><%= link_to 'Add friend', friendship_path(id: user.id), method: :post ,class: "btn btn-success"%></td>
         <td></td>
         
       </tr>
+      <div>
+      <% if !@accepted_friend.nil? && @accepted_friend.include?(user)%> <hr>
+      <a class='success'>Friends</a>
+      <% elsif !@pending_friend.nil? && @pending_friend.include?(user)%> <hr>
+      <a class='pending'>Waiting for response</a>
+      <% elsif !@expected_friend.nil? && @expected_friend.include?(user)%> <hr>
+      <% end %>
+      </div>
     <% end %>
   </tbody>
 </table>

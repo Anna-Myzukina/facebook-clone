@@ -32,7 +32,27 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  def request_friend
+    @friendship = current_user.friendships.build(friend_id: params[:id])
+    if @friendship.save
+      flash.notice = 'Friend request sent'
+    else
+      flash.alert = 'Failed to send request'
+    end
+    redirect_to users_path
+  end
 
+  def accept_friend
+    friend = Friendship.find_by(id: params[:id])
+    debugger
+    @friendship = friend.build(confirmed: true)
+    if @friendship
+      flash.notice = 'Friend accepted'
+    else
+      flash.alert = 'Failed to accept request'
+    end
+    redirect_to users_path
+  end
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update; end
