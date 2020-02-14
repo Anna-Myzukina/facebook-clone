@@ -44,7 +44,6 @@ class UsersController < ApplicationController
 
   def accept_friend
     friend = Friendship.find_by(id: params[:id])
-    debugger
     @friendship = friend.build(confirmed: true)
     if @friendship
       flash.notice = 'Friend accepted'
