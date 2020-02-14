@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def likes?(post)
     post.likes.where(user_id: id).any?
   end
+
+  def friend_name
+    friends.map{|f| f.username}
+  end
 end
