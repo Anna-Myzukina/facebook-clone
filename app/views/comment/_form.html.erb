@@ -1,8 +1,4 @@
    <%= form_for [ post, @comment ] do |f| %>
-  <div class = " col-md-4">
-       <%= f.label :username%><br/>
-       <%= f.text_field :user, autofocus: true, autocomplete: " your name", placeholder: "commenter's name" %> 
-  </div> 
   <div >
     <%= f.text_area :content, :class => "form-control", placeholder:"leave a comment" %>
      <br>
