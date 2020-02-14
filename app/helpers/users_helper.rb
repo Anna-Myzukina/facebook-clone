@@ -19,4 +19,4 @@ module UsersHelper
     accepted = current_user.friendships.select(&:confirmed).map(&:friend)
     accepted + current_user.inverse_friendships.select(&:confirmed).map(&:user)
   end
-  end
+end
