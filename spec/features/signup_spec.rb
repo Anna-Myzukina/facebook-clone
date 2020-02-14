@@ -20,5 +20,4 @@ RSpec.describe 'signup a user' do
     click_on 'Sign up'
     expect(page).to have_content("facebook-clone")
   end
-  
 end
