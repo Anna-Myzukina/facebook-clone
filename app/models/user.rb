@@ -16,6 +16,6 @@ class User < ApplicationRecord
   end
 
   def friend_name
-    friends.map{|f| f.username}
+    friends.map(&:username)
   end
 end
