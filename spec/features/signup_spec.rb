@@ -8,7 +8,7 @@ RSpec.describe 'signup a user' do
     fill_in 'Email', with: ' '
     fill_in 'Password', with: ' '
     click_on 'Sign up'
-    expect(page).to have_content("4 errors prohibited this user from being saved")
+    expect(page).to have_content('4 errors prohibited this user from being saved')
   end
 
   scenario 'successfully signup a user ' do
@@ -18,6 +18,6 @@ RSpec.describe 'signup a user' do
     fill_in 'Email', with: 'jdoe@gmail.com '
     fill_in 'Password', with: '123456 '
     click_on 'Sign up'
-    expect(page).to have_content("facebook-clone")
+    expect(page).to have_content('facebook-clone')
   end
 end
