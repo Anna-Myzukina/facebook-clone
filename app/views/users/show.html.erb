@@ -1,13 +1,27 @@
-
+<h1>My Profile</h1>
+<h3>Username: <%= @user.username %></h3>
+<h3>Email: <%= @user.email %></h3>
+<p><%= link_to "Find Friends", users_path, class: "btn btn-outline-primary" %></p>
 <p id="notice"><%= notice %></p>
- <strong>Name:</strong>
-  <%= @user.username %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 <%= link_to 'Accept friend request', friendship_path, method: :patch ,class: "btn btn-success"%>
-<%= link_to 'Remove friend request', "", class: "btn btn-danger"%>
-<%= link_to 'Back', users_path %>
+<%= link_to 'Remove friend request', users_path, class: "btn btn-danger"%>
+<%= link_to 'Back', users_path, class: "btn btn-primary" %>
+
+
+<h2>Your Friends: </h2>
+<ul>
+  <% for friendship in @user.friendships %>
+  <li>
+    <%= h friendship.friend.username %>
+    (<%= link_to "remove", friendship, :method => :delete %>)
+  </li>
+  <% end %>  
+</ul>
+
+<h2>Users Who Have Befriended You: </h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+  <li><%= h user.username %></li>
+  <% end %>
+</ul>

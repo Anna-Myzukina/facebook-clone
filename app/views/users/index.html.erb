@@ -17,8 +17,8 @@
       <tr>
         <td><%= user.username %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         
         <td><%= link_to 'Add friend', friendship_path(id: user.id), method: :post ,class: "btn btn-success"%></td>
         <td></td>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to "Back to Posts" , posts_path%>
+<%= link_to "Back to Posts" , posts_path, class: "btn btn-warning"%>
