@@ -20,7 +20,7 @@
         <td><%= link_to 'Show', user, class: "btn btn-primary" %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         
-        <td><%= link_to 'Add friend', friendship_path(id: user.id), method: :post, class: 'btn btn-primary' %> </td>
+        <td><%= link_to 'Add friend', friendships_path(:friend_id => user), :method => :post, class: 'btn btn-primary' %> </td>
         <td></td>
         
       </tr>
