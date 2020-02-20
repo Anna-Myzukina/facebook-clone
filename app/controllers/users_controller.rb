@@ -33,12 +33,10 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-  
-  
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
-  def update; 
-  end
+  def update; end
 
   # DELETE /users/1
   # DELETE /users/1.json
