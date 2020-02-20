@@ -14,7 +14,7 @@ class FriendshipsController < ApplicationController
     @friendship&.destroy_friendship
     redirect_to request.referrer || root_path
   end
-  
+
   def update
     return unless @friendship.confirm_friend
 
@@ -34,11 +34,7 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.find_by(id: params[:id])
   end
 
-
-  
-  private
-
   def friendship_params
-    params.require(:friendship).permit(:user_id, :confirmed, :friend_id)
+    params.require(:friendship).permit(:friend_id)
   end
 end

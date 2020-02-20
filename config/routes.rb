@@ -9,6 +9,8 @@ path_names: {sign_in: 'login', sign_out: 'logout', edit:'profile',sign_up: 'regi
 resources :users, only: [:show, :index]
 resources :friendships
 
+get :pending_requests, to: 'friendships#pending'
+
 authenticated :user do
     root 'posts#index', as: :authenticated_root
     end 
