@@ -15,7 +15,7 @@ class User < ApplicationRecord
     post.likes.where(user_id: id).any?
   end
 
-  def friend_name
-    friends.map(&:username)
+  def friend?(user)
+    friends.include?(user)
   end
 end
