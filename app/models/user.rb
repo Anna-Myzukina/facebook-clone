@@ -19,6 +19,35 @@ class User < ApplicationRecord
     post.likes.where(user_id: id).any?
   end
 
+  def friends
+    friends = friendships.includes(:friend).where(confirmed: true).references(:users)
+    friends.map(&:friend)
+  end
+
+  def pending_friends
+    requests = friendships.includes(:friend).where(confirmed: false).references(:users)
+    requests.map(&:friend)
+  end
+
+  def friend_requests
+    inverse_friendships.map { |friendship| friendship.user unless friendship.confirmed }.compact
+  end
+
+  def send_request(friend)
+    return if Friendship.exists?(user_id: id, friend_id: friend.id) ||
+              Friendship.exists?(user_id: friend.id, friend_id: id)
+
+    Friendship.create(user_id: id, friend_id: friend.id)
+  end
+
+  def confirm_friend(user)
+    friendship = inverse_friendships.find { |friend| friend.user == user }
+    friendship.confirmed = true
+    friendship.save
+
+    friendships.create(friend_id: user.id, confirmed: true)
+  end
+
   def friend?(user)
     friends.include?(user)
   end

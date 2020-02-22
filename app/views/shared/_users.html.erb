@@ -1,0 +1,19 @@
+<div>
+  <% users.each do |user| %>
+    <% if user != current_user %>
+      <div class="card col-3 mb-4 mx-2" >
+       
+        <div class="card-body ">
+          
+          <h2 class="card-text">User name: <%= user.username %></h2>
+          <h2 class="card-text">User enail: <%= user.email %></h2>
+          <%= render partial: 'shared/user_status', locals: {user: user} %>
+          <div>
+            <%= link_to 'View Profile', user_path(user), class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+

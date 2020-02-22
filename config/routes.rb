@@ -22,4 +22,11 @@ resources :posts do
     resource :comments
 end
   
+resources :users do
+    resources :friendships
+    delete 'reject_request', to: 'friendships#destroy'
+    post 'accept_request', to: 'friendships#update'
+  end
+
+resources :users  
 end

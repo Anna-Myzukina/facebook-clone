@@ -10,19 +10,4 @@
 <%= link_to 'Remove friend request', users_path, class: "btn btn-danger"%>
 <%= link_to 'Back', users_path, class: "btn btn-primary" %>
 
-<h2>Friends</h2>
-<ul>
-  <% for friendship in @user.friendships %>
-    <li>
-      <%= friendship.friend.username %>
-  </li>
-  <% end %>
-</ul>
 
-
-<h2>Befriended By:</h2>
-<ul>
-  <% for user in @user.inverse_friends %>
-    <li><%=h user.username %></li>
-  <% end %>
-</ul>
