@@ -1,21 +1,3 @@
-<% if user != current_user %>
-  <% if current_user.friend?(user) %>
-    <div><%= user.username %> is one of my friend </div>
-    <div>
-      <%= button_to 'Unfriend',  user_reject_request_path(user), method: :delete , class: 'btn btn-danger mb-2' %>
-    </div>
-  <% elsif current_user.pending_friends.include?(user) %>
-    <div>
-      <%= button_to 'Cancel request',  user_reject_request_path(user), method: :delete , class: 'btn btn-danger mb-2' %>
-    </div>
-  <% elsif current_user.friend_requests.include?(user) %>
-    <div class="row">
-      <%= button_to 'Accept', user_accept_request_path(user), class: 'btn btn-info mb-2'%>
-  <%= button_to 'Reject', user_reject_request_path(user), method: :delete, class: 'pull-right btn btn-danger'%>
-    </div>
-  <% else %>
-    <div>
-        <%= link_to 'Add new friend',  user_friendships_path(user), class: 'btn btn-info mb-2' %>
-    </div>
-  <% end %>
-<% end %>
+<div>
+  <%= user_status(user) %>
+</div>

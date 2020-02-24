@@ -7,11 +7,9 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    new_friend = current_user.friendships.build(user_id: params[:user_id])
-    if new_friend.save
-      flash[:notice] = 'Added friend.'
-      redirect_to root_path
-    end
+    new_friend = User.find(params[:user_id])
+    current_user.send_request(new_friend)
+    redirect_back(fallback_location: root_path)
   end
 
   def update
