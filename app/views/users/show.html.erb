@@ -4,10 +4,6 @@
 <p><%= link_to "Find Friends", users_path, class: "btn btn-outline-primary" %></p>
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Accept friend request', friendships_path(:friend_id => @user), :method => :post ,class: "btn btn-success"%>
-
-
-<%= link_to 'Remove friend request', users_path, class: "btn btn-danger"%>
 <%= link_to 'Back', users_path, class: "btn btn-primary" %>
 
 
