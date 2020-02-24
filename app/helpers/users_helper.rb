@@ -5,9 +5,9 @@ module UsersHelper
     if current_user.friend?(user)
       "#{user.username} is one of my friend"
       link_to 'Unfriend', user_reject_request_path(user), method: :delete, class: 'btn btn-danger mb-2'
-    elsif current_user.pending_friends.include?(user)
+    elsif current_user.pending_friendship.include?(user)
       link_to 'Cancel request', user_reject_request_path(user), method: :delete, class: 'btn btn-danger mb-2'
-    elsif current_user.friend_requests.include?(user)
+    elsif current_user.friendship_requests.include?(user)
       button = (button_to 'Accept friend request', user_accept_request_path(user), class: 'btn btn-primary mr-2')
       button.concat(button_to('Reject', user_reject_request_path(user), method: :delete, class: 'btn btn-danger'))
     else

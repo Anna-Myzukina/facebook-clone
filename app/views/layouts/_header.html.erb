@@ -9,8 +9,8 @@
   Logged in as: <strong><%= current_user.username %></strong>
 </li>
 <li class="header-styles">
-          <% if current_user.friend_requests.count > 0 %>
-            <%= link_to "you have #{pluralize(current_user.friend_requests.count, 'Friend Request')}", user_friendships_path(current_user), class: "header-styles-a" %>
+          <% if current_user.friendship_requests.count > 0 %>
+            <%= link_to "you have #{pluralize(current_user.friendship_requests.count, 'Friend Request')}", user_friendships_path(current_user), class: "header-styles-a" %>
           <% else %>
             <%= link_to "you have #{pluralize(current_user.friends.count, 'Friend')}", user_friendships_path(current_user), class: "header-styles-a" %>
           <% end %>

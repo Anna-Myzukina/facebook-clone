@@ -3,18 +3,18 @@ class FriendshipsController < ApplicationController
 
   def index
     @friends = current_user.friends
-    @friend_request = current_user.friend_requests
+    @friend_request = current_user.friendship_requests
   end
 
   def create
-    new_friend = User.find(params[:user_id])
-    current_user.send_request(new_friend)
+    new_friendship = User.find(params[:user_id])
+    current_user.send_request(new_friendship)
     redirect_back(fallback_location: root_path)
   end
 
   def update
-    my_friend = User.find(params[:user_id])
-    current_user.confirm_friend(my_friend)
+    my_friendship = User.find(params[:user_id])
+    current_user.confirm_friend(my_friendship)
     redirect_back(fallback_location: root_path)
   end
 
@@ -35,7 +35,7 @@ class FriendshipsController < ApplicationController
     @user = User.find_by(id: params[:user_id])
     return unless @user.nil?
 
-    flash[:danger] = "Internal error: user doesn't exist"
+    flash[:danger] = "User doesn't exist"
     redirect_back(fallback_location: root_path)
   end
 end
