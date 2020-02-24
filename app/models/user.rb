@@ -44,4 +44,7 @@ class User < ApplicationRecord
     friendships.create(friend_id: user.id, confirmed: true)
   end
 
+  def friend?(user)
+    friends.include?(user)
+  end
 end
