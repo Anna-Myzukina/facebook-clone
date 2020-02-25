@@ -3,7 +3,7 @@ module UsersHelper
     return if current_user == user
 
     if current_user.friend?(user)
-      "#{user.username} is one of my friend"
+      # "#{user.username} is one of my friend"
       link_to 'Unfriend', user_reject_request_path(user), method: :delete, class: 'btn btn-danger mb-2'
     elsif current_user.pending_friendship.include?(user)
       link_to 'Cancel request', user_reject_request_path(user), method: :delete, class: 'btn btn-danger mb-2'
