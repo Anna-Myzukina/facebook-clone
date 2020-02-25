@@ -11,7 +11,7 @@ module UsersHelper
       button = (button_to 'Accept friend request', user_accept_request_path(user), class: 'btn btn-primary mr-2')
       button.concat(button_to('Reject', user_reject_request_path(user), method: :delete, class: 'btn btn-danger'))
     else
-      link_to 'Add new friend', user_friendships_path(user), class: 'btn btn-info mb-2'
+      link_to 'Add new friend', user_friendships_path(user), method: :post,class: 'btn btn-info mb-2'
     end
   end
 end
