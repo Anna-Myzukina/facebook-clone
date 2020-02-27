@@ -21,8 +21,7 @@ class User < ApplicationRecord
   end
 
   def pending_friendship
-    requests = friendships.includes(:friend).where(confirmed: false).references(:users)
-    requests.map(&:friend)
+    friendships.map { |friendship| friendship.friend unless friendship.confirmed }.compact
   end
 
   def friendship_requests
