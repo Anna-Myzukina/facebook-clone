@@ -25,22 +25,21 @@ gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate', '3.1.6'
 
 group :development, :test do
-  gem 'rails-controller-testing'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '>= 2.15'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'sqlite3', '1.3.13'
-  
 end
 
 group :development do
+  gem 'database_cleaner'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
-  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
