@@ -142,7 +142,7 @@ GEM
       ast (~> 2.4.0)
     pg (0.18.4)
     public_suffix (4.0.3)
-    puma (3.12.2)
+    puma (3.12.3)
     rack (2.1.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -275,7 +275,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   omniauth-facebook
   pg (= 0.18.4)
-  puma (~> 3.7)
+  puma (~> 3.12)
   rails (~> 5.1.7)
   rspec-rails
   rubocop
