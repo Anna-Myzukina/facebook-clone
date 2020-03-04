@@ -8,13 +8,19 @@
 <i class="fa fa-user"></i>
   Logged in as: <strong><%= current_user.username %></strong>
 </li>
-
+<li class="header-styles">
+          <% if current_user.friendship_requests.count > 0 %>
+            <%= link_to "You have #{pluralize(current_user.friendship_requests.count, 'Friend Request')}", user_friendships_path(current_user), class: "header-styles-a" %>
+          <% else %>
+            <%= link_to "You have #{pluralize(current_user.friends.count, 'Friend')}", user_friendships_path(current_user), class: "header-styles-a" %>
+          <% end %>
+        </li>
 
 <li class="header-styles">
-  <%= link_to 'Edit profile |', edit_user_registration_path, :class => 'header-styles-a' %> 
+  <%= link_to 'Edit profile |', edit_user_registration_path, class: 'header-styles-a' %> 
   </li>
 <li class="header-styles">
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'header-styles-a'  %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'header-styles-a'  %>
 </li>
 <% else %>
 <li class="header-styles">

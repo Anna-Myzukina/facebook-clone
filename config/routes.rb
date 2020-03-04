@@ -6,7 +6,10 @@ devise_for :users,
 path: '',
 path_names: {sign_in: 'login', sign_out: 'logout', edit:'profile',sign_up: 'registration'}
 # controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-resources :users, only: [:show, :index]
+resources :users, only: [:show, :index, :destroy]
+resources :friendships
+
+
 authenticated :user do
     root 'posts#index', as: :authenticated_root
     end 
@@ -19,4 +22,11 @@ resources :posts do
     resource :comments
 end
   
+resources :users do
+    resources :friendships
+    delete 'reject_request', to: 'friendships#destroy'
+    post 'accept_request', to: 'friendships#update'
+  end
+
+resources :users  
 end

@@ -1,11 +1,29 @@
-
+<h1>My Profile</h1>
+<h3>Username: <%= @user.username %></h3>
+<h3>Email: <%= @user.email %></h3>
+<p><%= link_to "Find Friends", users_path, class: "btn btn-outline-primary" %></p>
 <p id="notice"><%= notice %></p>
- <strong>Name:</strong>
-  <%= @user.username %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-<%= link_to 'Back', users_path %>
+ <div class="col-md-8">
+    <h4>Activities</h4>
+    <% if @user.posts.any? %>
+      <h3>Total number of overall Posts:
+      <%= @user.posts.count %>
+      </h3>
+    <% end %>
+    <% if @user.comments.any? %>
+      <h3>Total number of overall comments:
+      <%= @user.comments.count %>
+      </h3>
+    <% end %>
+   <% if @user.friendships.any? %>
+      <h3>Number of Friends:
+      <%= @user.friendships.count %>
+      </h3>
+    <% end %>
+    <%= link_to 'Back', users_path, class: "btn btn-success" %>
+  </div>
+
+
+
+

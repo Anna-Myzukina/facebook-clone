@@ -19,10 +19,10 @@
         <div>
         <ol>
         <li class="mini-menu">
-          <%= link_to 'See All Users ', users_path %> 
+         <a><%= link_to 'See All Users', users_path, :class => 'header-styles-a' %></a> 
         </li>
         <li class="mini-menu">
-          <%= link_to 'View All Posts ', posts_path%> 
+          <a><%= link_to 'View All Posts ', posts_path,:class => 'header-styles-a' %></a>
         </li>
         </ol>
         </div>
@@ -56,10 +56,10 @@
             </div>
             <hr>
             <div>
-            <%= link_to raw('<i class="fa fa-heart"></i>'), post_like_path(post), method: :post, class: "btn btn-info" %>
-            <%=  post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
-            <span class='comment-count'>Comments: <%= post.comments.count =%> </span>
-            </div>  
+<td><%= render partial: "likes", locals: {post: post}%></td> 
+<td><i class="fa fa-thumbs-up"></i><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td><hr>
+<span class='comment-count'>Comments: <%= post.comments.count =%> </span>
+</div>
 
        
           <div class='card-body'> <br>
