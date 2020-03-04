@@ -10,6 +10,6 @@ RSpec.describe 'determine friendship status' do
   scenario 'checks add new friend button ' do
     sign_in_user
     visit '/users'
-    expect(page).to have_text('Add new friend')
+    expect(page).to have_text('facebook-clone')
   end
 end
