@@ -19,8 +19,6 @@ class User < ApplicationRecord
   has_many :confirmed_friendships, -> { where confirmed: true }, class_name: 'Friendship'
   has_many :friends, through: :confirmed_friendships
 
-
-
   def likes?(post)
     post.likes.where(user_id: id).any?
   end
