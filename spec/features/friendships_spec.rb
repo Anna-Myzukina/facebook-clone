@@ -5,7 +5,7 @@ RSpec.describe Friendship, type: :feature do
     @first_user = User.create!(username: 'John', sirname: 'Doe',
                                email: 'john08@gmail.com', password: 'johndoe')
 
-    @second_user = User.create!(username: 'Jane', sirname: 'Doe', 
+    @second_user = User.create!(username: 'Jane', sirname: 'Doe',
                                 email: 'jane03@gmail.com', password: 'janedoe')
 
     visit '/login'
@@ -13,7 +13,7 @@ RSpec.describe Friendship, type: :feature do
     fill_in 'Password', with: @first_user.password
     click_button 'Log in'
     visit users_path
-    click_button 'Add new friend', :match => :first
+    click_button 'Add new friend', match: :first
     click_on 'Logout'
   end
 
