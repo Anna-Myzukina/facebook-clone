@@ -14,7 +14,7 @@ RSpec.describe Friendship, type: :feature do
     fill_in 'Password', with: @first_user.password
     click_button 'Log in'
     visit users_path
-    click_button 'Add new friend', :match => :first
+    click_button 'Add new friend', match: :first
     click_on 'Logout'
     visit '/login'
     fill_in 'Email', with: @second_user.email
