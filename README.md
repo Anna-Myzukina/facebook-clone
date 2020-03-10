@@ -43,6 +43,10 @@ $ rspec
 ```
 $ rails generate rspec:install
 
+## Show your support
+
+Give a ⭐️ if you like this project!
+
 ## License:
 
 * See [LICENSE.md](https://github.com/Anna-Myzukina/facebook-clone/blob/master/LICENSE.md) for details.
