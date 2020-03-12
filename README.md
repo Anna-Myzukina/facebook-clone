@@ -41,7 +41,11 @@ $ rails server
 ```
 $ rspec
 ```
+
+```
+
 $ rails generate rspec:install
+```
 
 ## License:
 
