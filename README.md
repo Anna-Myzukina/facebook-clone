@@ -47,11 +47,18 @@ $ rspec
 $ rails generate rspec:install
 ```
 
-## License:
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License:
 
 * See [LICENSE.md](https://github.com/Anna-Myzukina/facebook-clone/blob/master/LICENSE.md) for details.
 
 ## Authors:
 
+👤 **Author1**
 * [Anna Muzykina](https://github.com/Anna-Myzukina)
+
+👤 **Author2**
 * [Emogene Akwiri](https://github.com/Elukoye)
