@@ -1,11 +1,7 @@
 # Project: [Building Facebook](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project)
 
 ## Live version of project :
-<<<<<<< HEAD
 [facebook-clone](https://desolate-bastion-95748.herokuapp.com/login)
-=======
-[facebook-clone](https://desolate-bastion-95748.herokuapp.com)
->>>>>>> development
 
 ## Description:
 
