@@ -12,6 +12,12 @@ Building Facebook clone. As usual, any additional styling will be up to you but 
 - [ ] Bootstrap 4
 - [ ] PostgreSQL
 
+## Features:
+- [ ] A user can register for an account
+- [ ] A user can login and logout
+- [ ] A user can change their details
+- [ ] Bootstrap source in vendor/assets
+- [ ] Font awesome CSS source
 
 ## Environment:
 - [ ] Ruby on Rails version 5.1.7
