@@ -3,7 +3,7 @@
 ## Live version of project :  [facebook-clone](https://desolate-bastion-95748.herokuapp.com/login)
 ![screen](https://github.com/Anna-Myzukina/facebook-clone/blob/master/app/assets/images/1.png)
 
-## Description:
+## Description
 
 Building Facebook clone. As usual, any additional styling will be up to you but the really important stuff is to get the data and back end working properly. You’ll put together some of the core features of the platform – users, profiles, “friending”, posts, news feed, and “liking”. You’ll also implement sign-in with the real Facebook by using Omniauth and Devise.
 
@@ -12,21 +12,21 @@ Building Facebook clone. As usual, any additional styling will be up to you but 
 - [ ] Bootstrap 4
 - [ ] PostgreSQL
 
-## Features:
+## Features
 - [ ] A user can register for an account
 - [ ] A user can login and logout
 - [ ] A user can change their details
 - [ ] Bootstrap source in vendor/assets
 - [ ] Font awesome CSS source
 
-## Environment:
+## Environment
 - [ ] Ruby on Rails version 5.1.7
 - [ ] bcrypt version 3.1.12 ([bcrypt()](https://github.com/codahale/bcrypt-ruby) allows you to easily harden your application against these kinds of attacks.)
 - [ ] ([bootstrap-sass](https://www.rubydoc.info/gems/bootstrap-sass/3.3.6) is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications version 3.3.7
 - [ ] Puma: A Ruby Web Server Built For Concurrency version '3.9.1'
 
-## Getting started:
-To get started with the app, clone the repo and then install the needed gems:
+## Getting started
+- [ ] To get started with the app, clone the repo and then install the needed gems:
 
 ```
 $ bundle install --without production
@@ -61,16 +61,16 @@ $ rails generate rspec:install
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+- [ ] Give a ⭐️ if you like this project!
 
-## 📝 License:
+## 📝 License
 
-* See [LICENSE.md](https://github.com/Anna-Myzukina/facebook-clone/blob/master/LICENSE.md) for details.
+* [ ] See [LICENSE.md](https://github.com/Anna-Myzukina/facebook-clone/blob/master/LICENSE.md) for details.
 
-## Authors:
+## Authors
 
 👤 **Author1**
-* [Anna Muzykina](https://github.com/Anna-Myzukina)
+* [ ] [Anna Muzykina](https://github.com/Anna-Myzukina)
 
 👤 **Author2**
-* [Emogene Akwiri](https://github.com/Elukoye)
+* [ ] [Emogene Akwiri](https://github.com/Elukoye)
