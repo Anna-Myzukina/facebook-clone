@@ -10,7 +10,7 @@ Building Facebook clone. As usual, any additional styling will be up to you but 
 ## Skills 
 - [ ] Ruby on Rails
 - [ ] Bootstrap 4
-- [ ] sqlite3
+- [ ] PostgreSQL
 
 ## Features
 - [ ] A user can register for an account
