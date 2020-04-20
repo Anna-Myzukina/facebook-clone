@@ -19,6 +19,11 @@ Building Facebook clone. As usual, any additional styling will be up to you but 
 - [ ] Bootstrap source in vendor/assets
 - [ ] Font awesome CSS source
 
+## Future features
+- [ ] Users can upload profile photos.
+- [ ] Users can create posts with images.
+- [ ] Users can add comments with icons.
+
 ## Environment
 - [ ] Ruby on Rails version 5.1.7
 - [ ] bcrypt version 3.1.12 ([bcrypt()](https://github.com/codahale/bcrypt-ruby) allows you to easily harden your application against these kinds of attacks.)
