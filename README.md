@@ -1,4 +1,4 @@
-# Project: [Building Facebook](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project)
+## Project: [Building Facebook](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project)
 
 ## Live version of project :  [facebook-clone](https://desolate-bastion-95748.herokuapp.com/login)
 ![screen](https://github.com/Anna-Myzukina/facebook-clone/blob/master/app/assets/images/1.png)
