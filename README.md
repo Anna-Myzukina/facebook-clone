@@ -1,11 +1,11 @@
 ## Project: [Building Facebook](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project)
 
-## Live version of project :  [facebook-clone](https://desolate-bastion-95748.herokuapp.com/login)
+## A Live version of the project:  [facebook-clone](https://desolate-bastion-95748.herokuapp.com/login)
 ![screen](https://github.com/Anna-Myzukina/facebook-clone/blob/master/app/assets/images/1.png)
 
 ## Description
 
-Building Facebook clone. As usual, any additional styling will be up to you but the really important stuff is to get the data and back end working properly. You’ll put together some of the core features of the platform – users, profiles, “friending”, posts, news feed, and “liking”. You’ll also implement sign-in with the real Facebook by using Omniauth and Devise.
+Building Facebook clone. As usual, any additional styling will be up to you but the really important stuff is to get the data and back end working properly. You’ll put together some of the core features of the platform – users, profiles, “friending”, posts, a news feed, and “liking”. You’ll also implement sign-in with the real Facebook by using Omniauth and Devise.
 
 ## Skills 
 - [ ] Ruby on Rails
@@ -14,10 +14,10 @@ Building Facebook clone. As usual, any additional styling will be up to you but 
 
 ## Features
 - [ ] A user can register for an account
-- [ ] A user can login and logout
+- [ ] A user can log in and logout
 - [ ] A user can change their details
-- [ ] Bootstrap source in vendor/assets
-- [ ] Font awesome CSS source
+- [ ] The Bootstrap source in vendor/assets
+- [ ] Font Awesome CSS source
 
 ## Future features
 - [ ] Users can upload profile photos.
@@ -31,7 +31,7 @@ Building Facebook clone. As usual, any additional styling will be up to you but 
 - [ ] Puma: A Ruby Web Server Built For Concurrency version '3.9.1'
 
 ## Getting started
-- [ ] To get started with the app, clone the repo and then install the needed gems:
+- [ ] To get started with the app, clone the repo, and then install the needed gems:
 
 ```
 $ bundle install --without production
