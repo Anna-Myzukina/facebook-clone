@@ -77,7 +77,9 @@ $ rails generate rspec:install
 ## Authors
 
 👤 **Author1**
-* [ ] [Anna Muzykina](https://github.com/Anna-Myzukina)
+* GitHub: [Anna Muzykina](https://github.com/Anna-Myzukina)
+* LinkedIn: [Anna Muzykina](https://www.linkedin.com/in/anna-muzykina/)
+* email: anna.muzykina83@gmail.com
 
 👤 **Author2**
 * [ ] [Emogene Akwiri](https://github.com/Elukoye)
