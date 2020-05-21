@@ -1,11 +1,13 @@
 ## Project: [Building Facebook](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project)
 
-## A Live version of the project:  [facebook-clone](https://desolate-bastion-95748.herokuapp.com/login)
-![screen](https://github.com/Anna-Myzukina/facebook-clone/blob/master/app/assets/images/1.png)
-
 ## Description
 
 Building Facebook clone. As usual, any additional styling will be up to you but the really important stuff is to get the data and back end working properly. You’ll put together some of the core features of the platform – users, profiles, “friending”, posts, a news feed, and “liking”. You’ll also implement sign-in with the real Facebook by using Omniauth and Devise.
+
+![screen](https://github.com/Anna-Myzukina/facebook-clone/blob/master/app/assets/images/1.png)
+
+## A Live version of the project:  [facebook-clone](https://desolate-bastion-95748.herokuapp.com/login)
+
 
 ## Skills 
 - [ ] Ruby on Rails
