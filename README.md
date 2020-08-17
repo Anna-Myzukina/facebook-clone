@@ -84,4 +84,6 @@ $ rails generate rspec:install
 * email: anna.muzykina83@gmail.com
 
 👤 **Author2**
-* [ ] [Emogene Akwiri](https://github.com/Elukoye)
+* GitHub: [Emogene Lukoye](https://github.com/Elukoye)
+* LinkedIn: [Emogene Lukoye](https://www.linkedin.com/in/elukoye/)
+
