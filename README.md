@@ -2,7 +2,7 @@
 
 ## Description
 
-Building Facebook clone. As usual, any additional styling will be up to you but the really important stuff is to get the data and back end working properly. You’ll put together some of the core features of the platform – users, profiles, “friending”, posts, a news feed, and “liking”. You’ll also implement sign-in with the real Facebook by using Omniauth and Devise.
+A social networking site similar to Facebook.Users can sign-up, login, send friend requests, accept and delete friend requests.They can create ,like and comment on their posts and their friends posts. They can also delete their accounts from the app. Technologies used include;Rails,Devise,PostgreSQL,BootStrap,RSpec and Heroku for deployment.
 
 ![screen](https://github.com/Anna-Myzukina/facebook-clone/blob/master/app/assets/images/1.png)
 
